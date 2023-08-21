@@ -1302,19 +1302,19 @@
             myHeaders.append("Content-Type", "application/json");
 
             var raw = JSON.stringify({
-                "Name": name,
-                "Email": email,
-                "Phone": phone,
-                "VIN": vin,
-                "Service": service,
-                "Message": message
+                "Name": `${name}`,
+                "Email": `${email}`,
+                "Phone": `${phone}`,
+                "VIN": `${vin}`,
+                "Service": `${service}`,
+                "Message": `${message}`
             });
             console.log(raw)
 
             var requestOptions = {
                 method: 'POST',
                 headers: myHeaders,
-                body: JSON.stringify(raw),
+                body: JSON.parse(raw),
                 redirect: 'follow'
             };
 
